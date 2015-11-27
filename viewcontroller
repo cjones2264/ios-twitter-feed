@@ -1,0 +1,16 @@
+import UIKit
+import TwitterKit
+
+class ViewController: TWTRTimelineViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let client = TWTRAPIClient()
+        self.dataSource = TWTRUserTimelineDataSource(screenName: "codelouisville", APIClient: client)
+        
+       
+        TWTRTweetView.appearance().theme = .Light
+        
+    }
+}
